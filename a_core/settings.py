@@ -214,10 +214,18 @@ if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
     EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    DEFAULT_FROM_EMAIL = f'Awesome {env("EMAIL_ADDRESS")}'
+    DEFAULT_FROM_EMAIL = f'Realtime Chat {env("EMAIL_ADDRESS")}'
     ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = env('TEST_EMAIL_HOST')
+    EMAIL_HOST_USER = env('TEST_EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('TEST_EMAIL_HOST_PASSWORD')
+    EMAIL_PORT = env('TEST_EMAIL_PORT')
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = f'Realtime Chat {env("EMAIL_ADDRESS")}'
+    ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
