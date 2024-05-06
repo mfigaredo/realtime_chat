@@ -87,11 +87,11 @@ input[name="remember"] {
 .alert-danger { @apply bg-amber-500 }
 
 .green-dot {
-    @apply rounded-full bg-green-500 p-1.5 absolute top-2 left-2 
+    @apply rounded-full bg-green-500 p-1.5 
 }
 .gray-dot {
-    @apply rounded-full bg-gray-500 p-1.5 absolute top-2 left-2 
+    @apply rounded-full bg-gray-500 p-1.5 
 }
 .graylight-dot {
-    @apply rounded-full bg-gray-300 p-1.5 absolute top-2 left-2 
+    @apply rounded-full bg-gray-300 p-1.5 
 }
